@@ -1,5 +1,6 @@
+import { Link } from "expo-router";
 import { useState } from "react";
-import { StyleSheet, Text, View, Image, Button } from "react-native";
+import { StyleSheet, Text, View, Button } from "react-native";
 
 const Home = () => {
   const [listItems, setListItems] = useState([
@@ -15,13 +16,14 @@ const Home = () => {
         {listItems.map((item) => (
           <Text
             key={item.id}
-            style={{ display: "flex", flexDirection: "column" }}
+            style={{ display: "flex", flexDirection: "column " }}
           >
             {item.name}
           </Text>
         ))}
       </Text>
       <Button title="Sample Button" />
+      <Link href={"/create"}>Create</Link>
     </View>
   );
 };
